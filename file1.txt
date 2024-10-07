@@ -1,0 +1,4 @@
+16:20  up 7 days,  1:56, 2 users, load averages: 1.61 1.98 2.18
+USER     TTY      FROM              LOGIN@  IDLE WHAT
+kelinargueta console  -                26Sep24 7days -
+kelinargueta s001     -                15:51       - w

@@ -2,7 +2,8 @@
 #import the necessary packages
 from flask import Flask, render_template, jsonify
 import mysql.connector # type: ignore #For database
-#import pandas as pd # type: ignore
+#import MySQL as MySQL
+#from flask_mysqldb import MySQLdb
 import matplotlib.pyplot as plt # type: ignore
 #from gevent.pywsgi import WSGIServer
 
@@ -13,10 +14,9 @@ app = Flask(__name__)
 db_config = {
     'host': ' localhost', 
     'user': 'root ',
-    'password': 'password',
+    'password': 'Honduras504',
     'database': 'System_monitoring'
 }
-
 
 def get_db_connection():
     return mysql.connector.connect(**db_config)
@@ -42,6 +42,7 @@ def index():
 def data():
     #fetch metrics data from the database
     metrics_data = fetch_metrics()
+    print("Fetched data:", metrics_data)
     return jsonify(metrics_data)
 
 if __name__=='__main__':

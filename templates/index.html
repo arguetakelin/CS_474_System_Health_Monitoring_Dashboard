@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="utf-8">
     <title>System Health Monitoring Dashboard</title>
@@ -23,18 +23,16 @@
             <th>CPU Usage (Idle)</th>
             <th>Memory Usage</th>
 			<th>Load Average</th>
-		
 		</tr>
 		<tbody id="metricsTable"></tbody>
 	</table>
 	
 	<!--System metrics chart-->
 	<canvas id="metricsChart" width="400" height="200"></canvas>
-	
-	<!--JavaScript code that will handle data fetching, table and chart-->
+
 		<script>
-        async function loadData() {
-			
+      async function fetchData() { //Get data from /data endpoint and update the table and chart//
+
 		try {
             // Fetch data from the /data endpoint in Flask
             const response = await fetch('/data');
@@ -47,16 +45,17 @@
 
 		} catch(error){
 			console.error('Error fetching data:', error);
-			
+
 			}
-			
+
 	}
-		
+
+	//Display data in the HTML table
 	function displayDataInTable(data){
-            // Update the table with fetched data
-            const tableBody = document.getElementById('table-body');
-            tableBody.innerHTML = ''; 
-            data.forEach(item => {
+            const tableBody = document.getElementById('metricsTable');
+            tableBody.innerHTML = '';
+            
+		data.forEach(item => {
                 const row = document.createElement('tr');
                 row.innerHTML = `<td>${row.timestamp}</td>
                                 <td>${row.cpu_usage_user}</td>
@@ -69,7 +68,7 @@
             });
 
 		}
-		
+
 		//Function to create a display a chart
 		function displayDataInchart(data) {
             // Prepare data for chart
@@ -90,7 +89,7 @@
                         borderColor: 'rgba(75, 192, 192, 1)',
                         borderWidth: 2,
                         fill: false
-                    }, 
+                    },
 					{
                         label: 'Memory Usage',
                         data: memoryUsage,
@@ -117,7 +116,9 @@
             }
         }
     });
-}    
+}
+
+	fetchData();
 
 </script>
 </body>

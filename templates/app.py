@@ -1,44 +1,43 @@
 
+#import the necessary packages
 from flask import Flask, render_template, jsonify
 import mysql.connector # type: ignore #For database
-import pandas as pd # type: ignore
+#import pandas as pd # type: ignore
 import matplotlib.pyplot as plt # type: ignore
-import io 
+#from gevent.pywsgi import WSGIServer
 
 #To initialize Flask app
 app = Flask(__name__) 
 
 #MySQL connection
 db_config = {
-    'host': ' ', 
-    'user': ' ',
-    'password': ' ',
+    'host': ' localhost', 
+    'user': 'root ',
+    'password': 'Honduras504',
     'database': 'System_monitoring'
 }
 
-#function to retrieve system metrics from the database
-def fetch_metrics():
 
-    try: 
-        conn = mysql.connector.connect(**db_config)
+def get_db_connection():
+    return mysql.connector.connect(**db_config)
+
+#function to get system metrics data from the database
+def fetch_metrics():
+        conn = get_db_connection()
         cursor = conn.cursor(dictionary=True) # dictionary=True will get the column names 
         cursor.execute("SELECT * FROM System_metrics") #Here it will execute SQL query to get all the records from the table
         data = cursor.fetchall()
-        cursor.close() #close the connetion
+        cursor.close() #close connetion
         conn.close()   
         return data
-    except mysql.connector.Error as err:
-            print ("Error getting data:", err)
-            return[] #return  an empty list if there is an error
 
-
+#route to render the main dashboard page
 @app.route('/')
-
 def index():
-    #Fetch data from the database to display on the webpage
-    metrics_data = fetch_metrics()
+    metrics_data = fetch_metrics() #retrieve metrics data from the database
     return render_template('index.html', metrics=metrics_data)
 
+#API endpoint to return metrics data as json for JavaScript to use in charts
 @app.route('/data')
 def data():
     #fetch metrics data from the database
@@ -49,7 +48,3 @@ if __name__=='__main__':
     app.run(debug=True)
 
     
-
-
-
-

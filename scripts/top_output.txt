@@ -1,0 +1,120 @@
+Processes: 626 total, 2 running, 1 stuck, 623 sleeping, 2699 threads 
+2024/10/22 15:08:05
+Load Avg: 3.43, 3.20, 2.65 
+CPU usage: 3.59% user, 8.63% sys, 87.76% idle 
+SharedLibs: 887M resident, 159M data, 58M linkedit.
+----
+Processes: 629 total, 4 running, 625 sleeping, 2747 threads 
+2024/10/22 15:08:35
+Load Avg: 4.13, 3.36, 2.72 
+CPU usage: 11.97% user, 13.17% sys, 74.85% idle 
+SharedLibs: 887M resident, 159M data, 58M linkedit.
+----
+Processes: 623 total, 14 running, 609 sleeping, 2707 threads 
+2024/10/22 15:09:05
+Load Avg: 3.56, 3.28, 2.72 
+CPU usage: 14.20% user, 17.75% sys, 68.4% idle 
+SharedLibs: 887M resident, 159M data, 58M linkedit.
+----
+Processes: 642 total, 5 running, 637 sleeping, 2921 threads 
+2024/10/22 15:09:35
+Load Avg: 4.22, 3.47, 2.80 
+CPU usage: 20.80% user, 16.77% sys, 62.41% idle 
+SharedLibs: 908M resident, 161M data, 60M linkedit.
+----
+Processes: 635 total, 4 running, 631 sleeping, 2711 threads 
+2024/10/22 15:10:05
+Load Avg: 4.17, 3.55, 2.85 
+CPU usage: 16.23% user, 14.28% sys, 69.48% idle 
+SharedLibs: 908M resident, 161M data, 60M linkedit.
+----
+Processes: 656 total, 13 running, 1 stuck, 642 sleeping, 3253 threads 
+2024/10/22 15:10:36
+Load Avg: 14.20, 5.92, 3.73 
+CPU usage: 19.54% user, 18.96% sys, 61.49% idle 
+SharedLibs: 923M resident, 163M data, 61M linkedit.
+----
+Processes: 658 total, 2 running, 656 sleeping, 2996 threads 
+2024/10/22 15:11:06
+Load Avg: 18.90, 7.78, 4.47 
+CPU usage: 22.43% user, 14.10% sys, 63.46% idle 
+SharedLibs: 923M resident, 163M data, 61M linkedit.
+----
+Processes: 637 total, 3 running, 634 sleeping, 2855 threads 
+2024/10/22 15:11:36
+Load Avg: 13.61, 7.57, 4.51 
+CPU usage: 10.52% user, 11.69% sys, 77.77% idle 
+SharedLibs: 924M resident, 163M data, 61M linkedit.
+----
+Processes: 628 total, 2 running, 626 sleeping, 2745 threads 
+2024/10/22 15:12:06
+Load Avg: 11.25, 7.60, 4.63 
+CPU usage: 6.36% user, 12.73% sys, 80.89% idle 
+SharedLibs: 924M resident, 163M data, 61M linkedit.
+----
+Processes: 640 total, 2 running, 638 sleeping, 2930 threads 
+2024/10/22 15:12:37
+Load Avg: 15.79, 8.85, 5.17 
+CPU usage: 7.47% user, 10.91% sys, 81.60% idle 
+SharedLibs: 925M resident, 163M data, 61M linkedit.
+----
+Processes: 639 total, 2 running, 637 sleeping, 2854 threads 
+2024/10/22 15:13:07
+Load Avg: 10.02, 8.12, 5.03 
+CPU usage: 5.95% user, 10.11% sys, 83.92% idle 
+SharedLibs: 935M resident, 164M data, 62M linkedit.
+----
+Processes: 634 total, 2 running, 632 sleeping, 2733 threads 
+2024/10/22 15:13:37
+Load Avg: 6.73, 7.51, 4.92 
+CPU usage: 4.24% user, 10.90% sys, 84.84% idle 
+SharedLibs: 935M resident, 164M data, 62M linkedit.
+----
+Processes: 638 total, 3 running, 635 sleeping, 2745 threads 
+2024/10/22 15:14:07
+Load Avg: 11.39, 8.60, 5.40 
+CPU usage: 4.9% user, 10.52% sys, 85.38% idle 
+SharedLibs: 938M resident, 164M data, 62M linkedit.
+----
+Processes: 639 total, 6 running, 633 sleeping, 2721 threads 
+2024/10/22 15:14:37
+Load Avg: 7.29, 7.87, 5.25 
+CPU usage: 17.54% user, 12.86% sys, 69.59% idle 
+SharedLibs: 938M resident, 164M data, 62M linkedit.
+----
+Processes: 636 total, 6 running, 630 sleeping, 2707 threads 
+2024/10/22 15:15:08
+Load Avg: 5.25, 7.31, 5.14 
+CPU usage: 9.25% user, 9.87% sys, 80.86% idle 
+SharedLibs: 939M resident, 165M data, 62M linkedit.
+----
+Processes: 633 total, 2 running, 631 sleeping, 2663 threads 
+2024/10/22 15:15:38
+Load Avg: 3.97, 6.81, 5.03 
+CPU usage: 2.92% user, 9.35% sys, 87.71% idle 
+SharedLibs: 940M resident, 165M data, 62M linkedit.
+----
+Processes: 630 total, 3 running, 627 sleeping, 2687 threads 
+2024/10/22 15:16:08
+Load Avg: 2.99, 6.30, 4.91 
+CPU usage: 6.66% user, 10.90% sys, 82.42% idle 
+SharedLibs: 940M resident, 165M data, 62M linkedit.
+----
+Processes: 632 total, 2 running, 630 sleeping, 2678 threads 
+2024/10/22 15:16:38
+Load Avg: 2.65, 5.89, 4.81 
+CPU usage: 2.90% user, 10.46% sys, 86.62% idle 
+SharedLibs: 940M resident, 165M data, 62M linkedit.
+----
+Processes: 634 total, 2 running, 632 sleeping, 2664 threads 
+2024/10/22 15:17:08
+Load Avg: 2.10, 5.46, 4.68 
+CPU usage: 3.68% user, 9.81% sys, 86.50% idle 
+SharedLibs: 940M resident, 165M data, 62M linkedit.
+----
+Processes: 638 total, 2 running, 636 sleeping, 2671 threads 
+2024/10/22 15:17:39
+Load Avg: 1.96, 5.09, 4.58 
+CPU usage: 2.51% user, 9.43% sys, 88.5% idle 
+SharedLibs: 940M resident, 165M data, 62M linkedit.
+----

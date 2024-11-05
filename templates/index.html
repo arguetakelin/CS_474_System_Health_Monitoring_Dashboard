@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>System Health Monitoring Dashboard</title>
+
+	<!--link to include the Chart.js library for displaying charts-->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<head>
+<body>
+
+    <h1>System Health Monitoring Dashboard</h1>
+
+	<!--button to refresh and fetch new data-->
+	<button onclick="fetchData()">Refresh Data</button>
+	
+	<!--Table to display system metrics fetched from the database-->
+	<table border = "1">
+		<tr>
+			<th>Timestamp</th>
+            <th>CPU Usage (User)</th>
+            <th>CPU Usage (Sys)</th>
+            <th>CPU Usage (Idle)</th>
+            <th>Memory Usage</th>
+			<th>Load Average</th>
+		
+		</tr>
+		<tbody id="metricsTable"></tbody>
+	</table>
+	
+	<!--System metrics chart-->
+	<canvas id="metricsChart" width="400" height="200"></canvas>
+	
+	<!--JavaScript code that will handle data fetching, table and chart-->
+		<script>
+        async function loadData() {
+			
+		try {
+            // Fetch data from the /data endpoint in Flask
+            const response = await fetch('/data');
+            if (!response.ok) throw new Error('Network response was not ok');
+            const data = await response.json(); //Parse the json data
+
+			//display the data in both: table and chart
+            displayDataInTable(data);
+            displayDataInChart(data);
+
+		} catch(error){
+			console.error('Error fetching data:', error);
+			
+			}
+			
+	}
+		
+	function displayDataInTable(data){
+            // Update the table with fetched data
+            const tableBody = document.getElementById('table-body');
+            tableBody.innerHTML = ''; 
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${row.timestamp}</td>
+                                <td>${row.cpu_usage_user}</td>
+                                <td>${row.cpu_usage_sys}</td>
+                                <td>${row.cpu_usage_idle}</td>
+                                <td>${row.memory_usage}</td>
+                                <td>${row.processes}</td>
+                                <td>${row.load_average}</td>`;
+                tableBody.appendChild(row);
+            });
+
+		}
+		
+		//Function to create a display a chart
+		function displayDataInchart(data) {
+            // Prepare data for chart
+            const labels = data.map(item => item.timestamp);
+            const cpuUserData = data.map(item => item.cpu_usage_user);
+            const memoryData = data.map(item => item.memory_usage);
+
+            // Display the chart
+            const ctx = document.getElementById('myChart').getContext('2d');
+            new Chart(ctx, { //create a new line chart with Chart.js
+                type: 'line',
+                data: {
+
+                    labels: labels,
+                    datasets: [{
+                        label: 'CPU Usage (User)',
+                        data: cpuUsageUser,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 2,
+                        fill: false
+                    }, 
+					{
+                        label: 'Memory Usage',
+                        data: memoryUsage,
+                        borderColor: 'rgba(153, 102, 255, 1)',
+                        borderWidth: 1,
+                        fill: false
+                    }]
+                },
+                options: {
+				   responsive: true,
+                    scales: {
+                        x: {
+						 title:{
+							display: true,
+							text: 'Timestamp'
+                            }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Usage (%)'
+                    }
+                }
+            }
+        }
+    });
+}    
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+	

@@ -14,7 +14,7 @@ app = Flask(__name__)
 db_config = {
     'host': ' localhost', 
     'user': 'root ',
-    'password': 'Honduras504',
+    'password': 'your password',
     'database': 'System_monitoring'
 }
 
